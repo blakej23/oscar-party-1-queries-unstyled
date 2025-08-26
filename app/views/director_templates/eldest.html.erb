@@ -1,0 +1,12 @@
+<h1>Eldest Director </h1>
+
+<% directors_with_dob = Director.where.not({ :dob => nil}) %>
+<% sorted_directors = directors_with_dob.order({ :dob => :asc }) %>
+
+<% oldest_director = sorted_directors.at(0) %>
+
+<p>
+  The eldest director in our dataset right now is 
+  <%= oldest_director.first_name %> <%= oldest_director.last_name %>,
+  born on <%= oldest_director.dob %>
+</p>

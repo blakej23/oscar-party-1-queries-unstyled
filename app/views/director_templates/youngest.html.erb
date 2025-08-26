@@ -1,0 +1,12 @@
+<h1>Youngest Director </h1>
+
+<% directors_with_dob = Director.where.not({ :dob => nil}) %>
+<% sorted_directors = directors_with_dob.order({ :dob => :desc }) %>
+
+<% youngest_director = sorted_directors.at(0) %>
+
+<p>
+  The youngest director in our dataset right now is 
+  <%= youngest_director.first_name %> <%= youngest_director.last_name %>,
+  born on <%= youngest_director.dob %>
+</p>
