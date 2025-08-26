@@ -1,0 +1,14 @@
+<h1>List of directors</h1>
+
+<ol>
+  <% @list_of_directors.each do |a_dir| %>
+    <li>
+      <img src="<%= a_dir.image %>" width="100">
+
+      <a href ="/directors/<%= a_dir.id %>">
+      <%= a_dir.first_name %> <%= a_dir.last_name %> 
+      </a>
+
+    </li>
+  <% end %>
+</ol>
