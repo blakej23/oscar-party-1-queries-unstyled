@@ -1,0 +1,14 @@
+<h1>List of actors</h1>
+
+<ol>
+  <% @list_of_actors.each do |an_actor| %>
+    <li>
+      <img src="<%= an_actor.image %>" width="100">
+
+      <a href ="/actors/<%= an_actor.id %>">
+      <%= an_actor.first_name %> <%= an_actor.last_name %> 
+      </a>
+
+    </li>
+  <% end %>
+</ol>
